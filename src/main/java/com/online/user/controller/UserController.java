@@ -36,6 +36,7 @@ public class UserController {
 		}catch (Exception e) {
 			
 			User userWithError = new User();
+			userWithError.setMessage("Invalid username or password");
 			return new ResponseEntity<User>(userWithError, HttpStatus.BAD_REQUEST);
 		}
 	}

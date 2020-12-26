@@ -23,23 +23,16 @@ public class UserServiceImpl implements UserService {
 			userSuccess.setEmailid(userFromDb.getEmailid());
 			userSuccess.setPhone(userFromDb.getPhone());
 			userSuccess.setUsername(userFromDb.getUsername());
-			userSuccess.setSuccessMsg("User Authentication Success !");
+			userSuccess.setMessage("User Authentication Success");
 			return userSuccess;
 		}
 		else {
-			if (userFromDb.getErrorMsg().isEmpty()) {
-				User userError = null;
-				return userError;
-			}
-			else {
-				User userError = new User();
-				userError.setErrorMsg("Incorrect username");
-				return userError;
+			User userError = null;
+			return userError;
 			}
 			
 		}
 		
-	}
 	
 }
 

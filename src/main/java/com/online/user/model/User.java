@@ -20,20 +20,14 @@ public class User {
 	@Column(name="role")
 	private String role;
 	
-	private String successMsg;
-	private String errorMsg;
+	private String message;
 	
-	public String getSuccessMsg() {
-		return successMsg;
+	
+	public String getMessage() {
+		return message;
 	}
-	public void setSuccessMsg(String successMsg) {
-		this.successMsg = successMsg;
-	}
-	public String getErrorMsg() {
-		return errorMsg;
-	}
-	public void setErrorMsg(String errorMsg) {
-		this.errorMsg = errorMsg;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 	public String getUsername() {
 		return username;
