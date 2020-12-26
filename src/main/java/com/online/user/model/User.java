@@ -20,6 +20,21 @@ public class User {
 	@Column(name="role")
 	private String role;
 	
+	private String successMsg;
+	private String errorMsg;
+	
+	public String getSuccessMsg() {
+		return successMsg;
+	}
+	public void setSuccessMsg(String successMsg) {
+		this.successMsg = successMsg;
+	}
+	public String getErrorMsg() {
+		return errorMsg;
+	}
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
+	}
 	public String getUsername() {
 		return username;
 	}

@@ -1,19 +1,18 @@
 package com.online.user.controller;
 
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.online.user.dao.UserDAO;
 import com.online.user.model.User;
+import com.online.user.service.UserService;
 
 @RestController
 @RequestMapping("/user")
@@ -21,13 +20,13 @@ import com.online.user.model.User;
 public class UserController {
 	
 	@Autowired
-	private UserDAO userDAO;
+	private UserService userService;
 	
 	
 	@PostMapping("/login")
-	public ResponseEntity<User> authenticateUser(@PathParam(value = "username") String username) throws Exception {
+	public ResponseEntity<User> authenticateUser(@RequestBody User user) throws Exception {
 		try {
-			User userRes = userDAO.getPassword(username);
+			User userRes = userService.autheticateUserLogin(user);
 			if (userRes !=null) {
 				return new ResponseEntity<User>(userRes,HttpStatus.ACCEPTED);
 			}

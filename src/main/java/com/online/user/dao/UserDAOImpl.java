@@ -18,9 +18,12 @@ public class UserDAOImpl implements UserDAO {
 	public User getPassword(String username) {
 		System.out.println("Hai before");
 		User user = userRepository.findByUsername(username);
-		//testing 
-		System.out.println(user.getEmailid());
-		return user;
+		System.out.println(user.getUsername());
+		if (user.getUsername().isBlank()) {
+			user.setErrorMsg("Invalid Username");	
+			return user;
+		}
+		else return user;
 	}
 
 }
