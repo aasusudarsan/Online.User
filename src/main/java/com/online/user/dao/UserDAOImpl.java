@@ -16,7 +16,7 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public User getPassword(String username) {
-		System.out.println("Hai before");
+//		System.out.println("Hai before");
 		User user = userRepository.findByUsername(username);
 		return user;
 	}

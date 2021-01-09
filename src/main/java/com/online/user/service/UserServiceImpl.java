@@ -24,6 +24,8 @@ public class UserServiceImpl implements UserService {
 			userSuccess.setPhone(userFromDb.getPhone());
 			userSuccess.setUsername(userFromDb.getUsername());
 			userSuccess.setMessage("User Authentication Success");
+//			userSuccess.setRole("");
+//			userSuccess.setPassword("");
 			return userSuccess;
 		}
 		else {
